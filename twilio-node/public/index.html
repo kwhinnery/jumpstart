@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Twilio Jumpstart!</title> 
+
+    <!-- A little CSS to make our page prettier -->
+    <link rel="stylesheet" href="/app.css"/>
+
+    <!-- Third Party JavaScript Dependencies -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="//static.twilio.com/libs/twiliojs/1.1/twilio.min.js"></script>
+</head>
+<body>
+    <!-- A simple UI to test our Twilio back end -->
+    <div>
+        <img id="logo" src="/img/twilio.png" alt="Twilio: Cloud Communications"/>
+
+        <!-- Send a text message -->
+        <form id="sms">
+            <h3>SMS Text Message</h3>
+            <input type="text" placeholder="Enter a phone number" value=""/>
+            <input type="submit" value="Send me a text"/>
+        </form>
+
+        <!-- Connect a voice call -->
+        <form id="call">
+            <h3>Voice Call</h3>
+            <input type="text" placeholder="Enter a phone number" value=""/>
+            <input type="submit" value="Call Me"/>
+        </form>
+    </div>
+
+    <!-- include our application logic -->
+    <script src="/app.js"></script>
+</body>
+</html>
