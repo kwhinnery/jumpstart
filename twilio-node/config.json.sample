@@ -1,7 +1,6 @@
 {
-	"accountSid":"YOUR_ACCOUNT_SID",
-	"authToken":"YOUR_ACCOUNT_TOKEN",
+	"accountSid":"YOUR_SID",
+	"authToken":"YOUR_AUTH_TOKEN",
 	"twilioNumber":"YOUR_TWILIO_NUMBER",
-	"twimlAppSid":"YOUR_TWIML_APP_SID",
-	"myInitials":"YOUR_OWN_INITIALS"
+	"baseUrl":"YOUR_PUBLIC_SERVER"
 }

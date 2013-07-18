@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	<!-- Twilio Servlet Mappings -->
+	<servlet>
+		<servlet-name>sms</servlet-name>
+		<servlet-class>com.twilio.jumpstart.SmsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sms</servlet-name>
+		<url-pattern>/sms</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>call</servlet-name>
+		<servlet-class>com.twilio.jumpstart.CallServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>call</servlet-name>
+		<url-pattern>/call</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>capability</servlet-name>
+		<servlet-class>com.twilio.jumpstart.CapabilityServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>capability</servlet-name>
+		<url-pattern>/capability</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>hello</servlet-name>
+		<servlet-class>com.twilio.jumpstart.HelloServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Static welcome file -->
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+	<!-- App Engine Specific -->
+	<servlet>
+		<servlet-name>SystemServiceServlet</servlet-name>
+		<servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
+		<init-param>
+			<param-name>services</param-name>
+			<param-value/>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SystemServiceServlet</servlet-name>
+		<url-pattern>/_ah/spi/*</url-pattern>
+	</servlet-mapping>
+</web-app>

@@ -1,0 +1,5 @@
+INDEX VERSION 1.2+/Users/kevin/dev/twilio/jumpstart/twilio-java/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+877464648.index
+2350515917.index
+2517324321.index
+561797893.index

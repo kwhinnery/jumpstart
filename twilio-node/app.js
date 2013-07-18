@@ -31,7 +31,7 @@ app.post('/sms', function(request, response) {
     // Use the REST client to send an SMS text message
     twilioApi.sendSms({
         // This is the number input by the user on the web page
-        to:request.body.number,
+        to:request.body.to,
 
         // Send message from your Twilio number
         from:config.twilioNumber,
@@ -52,16 +52,13 @@ app.post('/call', function(request, response) {
     // Use the REST client to connect an outbound call
     twilioApi.makeCall({
         // This is the number input by the user on the web page
-        to:request.body.number,
+        to:request.body.to,
 
         // Make an outbound call from your Twilio number
         from:config.twilioNumber,
 
         // Construct a URL for TwiML instructions for this call
-        // Assumes you're using a Forward endpoint, started with a command like
-        // "forward 3000 ktw"
-        url:'https://' + config.myInitials
-            + '-1337.fwd.wf/hello',
+        url:config.baseUrl + '/hello',
 
         // Tell Twilio to fetch the above TwiML with a GET request
         method:'GET'
@@ -80,29 +77,13 @@ app.post('/capability', function(request, response) {
     var capability = new twilio.Capability(config.accountSid, config.authToken);
 
     // Allow outbound calling using the TwiML instructions configured in this
-    // TwiML app
-    capability.allowClientOutgoing(config.twimlAppSid);
-
-    // Allow inbound calls to your browser client, identified by your initials
-    capability.allowClientIncoming(config.myInitials);
+    // TwiML app - you can leave this as-is for now
+    capability.allowClientOutgoing('AP784bd34e34fab9759b8e91d3ef3680b9');
 
     // Send a JSON response with the capability token
     response.send({
         token:capability.generate()
     });
-});
-
-// A TwiML document that will connect an outbound call to the requested number
-app.get('/dial', function(request, response) {
-    // Construct TwiML response, which will <Dial> the number 
-    var twiml = new twilio.TwimlResponse();
-    twiml.dial(request.params.number, {
-        callerId:config.twilioNumber
-    });
-
-    // Render the XML in response to this request
-    response.set('Content-Type', 'text/xml');
-    response.send(twiml.toString());
 });
 
 // A TwiML document that will say back a message to the called person
