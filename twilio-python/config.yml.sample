@@ -1,4 +1,0 @@
-accountSid: YOUR_ACCOUNT_SID
-authToken: YOUR_AUTH_TOKEN
-twilioNumber: YOUR_TWILIO_NUMBER
-baseUrl: YOUR_SERVER_URL

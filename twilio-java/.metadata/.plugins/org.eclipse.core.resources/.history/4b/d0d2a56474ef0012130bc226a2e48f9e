@@ -1,7 +1,0 @@
-package com.twilio.jumpstart;
-
-import HttpServlet;
-
-public class CapabilityServlet extends HttpServlet {
-
-}

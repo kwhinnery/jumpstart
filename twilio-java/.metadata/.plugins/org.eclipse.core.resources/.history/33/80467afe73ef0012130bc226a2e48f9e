@@ -1,7 +1,0 @@
-package com.twilio.jumpstart;
-
-import javax.servlet.http.HttpServlet;
-
-public class SmsServlet extends HttpServlet {
-
-}

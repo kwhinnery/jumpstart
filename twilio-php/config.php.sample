@@ -1,0 +1,6 @@
+<?php
+$accountSid = 'your account sid';
+$authToken  = 'auth token';
+$twilioNumber = 'a twilio number';
+$baseUrl = 'https://something-1337.fwd.wf';
+?>

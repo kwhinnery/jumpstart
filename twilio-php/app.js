@@ -3,7 +3,7 @@ $(function() {
 	$('#text').on('click', function() {
 		var yourNumber = $('#number').val();
 
-		$.ajax('/sms', {
+		$.ajax('/sms.php', {
 			method:'POST',
 			dataType:'json',
 			data: {
@@ -22,7 +22,7 @@ $(function() {
 	$('#call').on('click', function() {
 		var yourNumber = $('#number').val();
 
-		$.ajax('/call', {
+		$.ajax('/call.php', {
 			method:'POST',
 			dataType:'json',
 			data: {
@@ -39,7 +39,7 @@ $(function() {
 
 	// Fetch a capability token and set up the Twilio Device
 	function setup(callback) {
-		$.ajax('/capability', {
+		$.ajax('/capability.php', {
 			method:'POST',
 			dataType:'json',
 			success: function(data) {
