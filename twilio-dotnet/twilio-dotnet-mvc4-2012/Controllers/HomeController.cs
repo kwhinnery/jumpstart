@@ -36,7 +36,7 @@ namespace twilio_dotnet.Controllers
         {
             client = new TwilioRestClient(Settings.AccountSid, Settings.AuthToken);
 
-            var result = client.InitiateOutboundCall(Settings.TwilioNumber, to, Url.Action("Hello",null,null,"http"));
+            var result = client.InitiateOutboundCall(Settings.TwilioNumber, to, Settings.BaseUrl + Url.Action("Hello"));
 
             if (result.RestException!=null) 
             {

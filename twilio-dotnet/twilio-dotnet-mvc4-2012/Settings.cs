@@ -11,5 +11,7 @@ namespace twilio_dotnet
         public static string AuthToken { get { return "[YOUR_AUTH_TOKEN]"; } }
 
         public static string TwilioNumber { get { return "[YOUR_TWILIO_PHONE_NUMBER]"; } }
+
+        public static string BaseUrl { get { return "[YOUR_SERVER_URL]"; } }
     }
 }
